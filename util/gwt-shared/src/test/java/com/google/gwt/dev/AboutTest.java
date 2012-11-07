@@ -22,22 +22,20 @@ import junit.framework.TestCase;
  */
 public class AboutTest extends TestCase {
 
-  @SuppressWarnings("deprecation")
-  public void testDeprecatedConstants() {
-    assertEquals("GWT_NAME", About.getGwtName(), About.GWT_NAME); 
-    assertEquals("GWT_VERSION", About.getGwtVersion(), About.GWT_VERSION);
-    assertEquals("GWT_VERSION_NUM", About.getGwtVersionNum(), About.GWT_VERSION_NUM);
-    assertEquals("GWT_SVNREV", About.getGwtSvnRev(), About.GWT_SVNREV);
-  }
-  
   public void testGwtName() {
     String result = About.getGwtName();
     assertTrue("Google Web Toolkit".equals(result));
   }
   
   public void testGwtSvnRev() {
+    @SuppressWarnings("deprecation")
     String result = About.getGwtSvnRev();
-    assertFalse(result.length() == 0);    
+    assertFalse(result.length() == 0);
+  }
+
+  public void testGwtRevision() {
+    String result = About.getGwtRevision();
+    assertFalse(result.length() == 0);
   }
   
   public void testGwtVersion() {

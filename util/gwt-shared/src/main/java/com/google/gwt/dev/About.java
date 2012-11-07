@@ -24,48 +24,8 @@ import java.util.Properties;
  */
 public class About {
 
-  // TODO(zundel): These public constants should be removed some day.
-  // Java inlines static final constants in compiled classes, leading to
-  // version incompatibility warnings.
-  /**
-   * @deprecated use {@link #getGwtName()} instead.
-   */
-  @Deprecated
-  public static String GWT_NAME;
-
-  /**
-   * @deprecated use {@link #getGwtSvnRev()} instead.
-   */
-  @Deprecated
-  public static String GWT_SVNREV;
-
-  /**
-   * @deprecated use {@link #getGwtVersion()} instead.
-   */
-  @Deprecated
-  public static String GWT_VERSION;
-
-  /**
-   * @deprecated use {@link #getGwtVersionObject()} or
-   *             {@link #getGwtVersionNum()} instead.
-   */
-  @Deprecated
-  public static String GWT_VERSION_NUM;
-
-  /**
-   * Tag used for text replacement of the SVN version (split up to avoid
-   * replacing it here).
-   */ 
-  private static final String GWT_SVNREV_TAG = "@GWT_" + "SVNREV@";
-
-  /**
-   * Tag used for text replacement of the GWT version (split up to avoid
-   * replacing it here).
-   */ 
-  private static final String GWT_VERSION_TAG = "@GWT_" + "VERSION@";
-
   private static final String gwtName = "Google Web Toolkit";
-  private static final String gwtSvnRev;
+  private static final String gwtRevision;
   private static final GwtVersion gwtVersion;
 
   static {
@@ -77,28 +37,14 @@ public class About {
       // okay... we use default values, then.
     }
 
-    String tmp;
-    tmp = props.getProperty("gwt.svnrev");
-    // Check for null or sentinel value
-    if (tmp == null || tmp.equals(GWT_SVNREV_TAG)) {
-      gwtSvnRev = "unknown";
-    } else {
-      gwtSvnRev = tmp;
-    }
+    gwtRevision = props.getProperty("gwt.revision", "unknown");
 
-    tmp = props.getProperty("gwt.version");
-    // Check for null or sentinel value
-    if (tmp == null || tmp.equals(GWT_VERSION_TAG)) {
+    String tmp = props.getProperty("gwt.version");
+    if (tmp == null) {
       gwtVersion = new GwtVersion();
     } else {
       gwtVersion = new GwtVersion(tmp);
     }
-
-    // Initialize deprecated constants
-    GWT_NAME = getGwtName();
-    GWT_VERSION = getGwtVersion();
-    GWT_VERSION_NUM = getGwtVersionNum();
-    GWT_SVNREV = getGwtSvnRev();
   }
 
   /**
@@ -109,13 +55,26 @@ public class About {
   }
 
   /**
-   * Returns the Subversion repository revision number.
+   * Returns the Git repository revision SHA1.
    * 
-   * @return the subversion revision or 'unknown' if the value couldn't be
+   * @return the git revision or 'unknown' if the value couldn't be
+   *         determined at build time.
+   * 
+   * @deprecated Use {@link #getGwtRevision()} instead
+   */
+  @Deprecated
+  public static String getGwtSvnRev() {
+    return gwtRevision;
+  }
+
+  /**
+   * Returns the Git repository revision SHA1.
+   * 
+   * @return the git revision or 'unknown' if the value couldn't be
    *         determined at build time.
    */
-  public static String getGwtSvnRev() {
-    return gwtSvnRev;
+  public static String getGwtRevision() {
+    return gwtRevision;
   }
 
   /**
