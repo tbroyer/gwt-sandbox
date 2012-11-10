@@ -5,17 +5,35 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-	<groupId>com.google.gwt</groupId>
-	<artifactId>gwt</artifactId>
-	<version>2.6.0-SNAPSHOT</version>
+        <groupId>com.google.gwt</groupId>
+        <artifactId>gwt</artifactId>
+        <version>2.6.0-SNAPSHOT</version>
     </parent>
 
     <groupId>com.google.gwt.dev</groupId>
     <artifactId>gwt-dev-parent</artifactId>
-    <version>2.6.0-SNAPSHOT</version>
     <packaging>pom</packaging>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <configuration>
+                        <includes>
+                            <include>com/google/**/*Test.java</include>
+                        </includes>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
     <modules>
         <module>gwt-jsni-parser</module>
+        <module>gwt-dev-json</module>
+        <module>gwt-dev-ext</module>
+        <module>gwt-compiler</module>
+        <module>gwt-devmode</module>
     </modules>
 </project>
