@@ -14,18 +14,44 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.google.gwt.util</groupId>
+            <artifactId>gwt-tools-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.gwt.dev</groupId>
+            <artifactId>gwt-dev-ext</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
             <groupId>com.google.gwt.dev</groupId>
             <artifactId>gwt-compiler</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.gwt.dev</groupId>
+            <artifactId>gwt-jetty-launcher</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.google.protobug</groupId>
+            <artifactId>protobuf-java</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.gwt.dev</groupId>
+            <artifactId>gwt-compiler</artifactId>
+            <version>${project.version}</version>
+            <type>test-jar</type>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>

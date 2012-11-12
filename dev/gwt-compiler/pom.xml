@@ -37,9 +37,36 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>test-jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
 
     <dependencies>
+<dependency>
+  <groupId>net.sourceforge.htmlunit</groupId>
+  <artifactId>htmlunit</artifactId>
+  <exclusions>
+<exclusion>
+<groupId>xalan</groupId>
+<artifactId>xalan</artifactId>
+</exclusion>
+<exclusion>
+<groupId>xerces</groupId>
+<artifactId>xercesImpl</artifactId>
+</exclusion>
+</exclusions>
+</dependency>
         <dependency>
             <groupId>com.google.gwt.util</groupId>
             <artifactId>gwt-shared</artifactId>
@@ -90,6 +117,7 @@
             <groupId>ant</groupId>
             <artifactId>ant</artifactId>
         </dependency>
+<!--
         <dependency>
             <groupId>xerces</groupId>
             <artifactId>xercesImpl</artifactId>
@@ -111,7 +139,7 @@
             <scope>system</scope>
             <systemPath>${GWT_TOOLS}/lib/xerces/xerces-2_9_1/xml-apis.jar</systemPath>
         </dependency>
-
+-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
