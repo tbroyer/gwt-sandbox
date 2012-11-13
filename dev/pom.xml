@@ -78,5 +78,6 @@
         <module>gwt-compiler</module>
         <module>gwt-jetty-launcher</module>
         <module>gwt-devmode</module>
+        <module>gwt-codeserver</module>
     </modules>
 </project>
