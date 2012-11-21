@@ -53,20 +53,6 @@
     </build>
 
     <dependencies>
-<dependency>
-  <groupId>net.sourceforge.htmlunit</groupId>
-  <artifactId>htmlunit</artifactId>
-  <exclusions>
-<exclusion>
-<groupId>xalan</groupId>
-<artifactId>xalan</artifactId>
-</exclusion>
-<exclusion>
-<groupId>xerces</groupId>
-<artifactId>xercesImpl</artifactId>
-</exclusion>
-</exclusions>
-</dependency>
         <dependency>
             <groupId>com.google.gwt.util</groupId>
             <artifactId>gwt-shared</artifactId>
@@ -117,29 +103,7 @@
             <groupId>ant</groupId>
             <artifactId>ant</artifactId>
         </dependency>
-<!--
-        <dependency>
-            <groupId>xerces</groupId>
-            <artifactId>xercesImpl</artifactId>
-            <version>2.9.1</version>
-            <scope>system</scope>
-            <systemPath>${GWT_TOOLS}/lib/xerces/xerces-2_9_1/xercesImpl-NoMetaInf.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>xerces</groupId>
-            <artifactId>serializer</artifactId>
-            <version>2.9.1</version>
-            <scope>system</scope>
-            <systemPath>${GWT_TOOLS}/lib/xerces/xerces-2_9_1/serializer.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>xml-apis</groupId>
-            <artifactId>xml-apis</artifactId>
-            <version>2.9.1</version>
-            <scope>system</scope>
-            <systemPath>${GWT_TOOLS}/lib/xerces/xerces-2_9_1/xml-apis.jar</systemPath>
-        </dependency>
--->
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

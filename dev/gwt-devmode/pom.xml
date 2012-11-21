@@ -38,9 +38,47 @@
             <artifactId>guava</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.google.protobug</groupId>
+            <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
         </dependency>
+        <dependency>
+            <groupId>net.sourceforge.htmlunit</groupId>
+            <artifactId>htmlunit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.sourceforge.htmlunit</groupId>
+            <artifactId>htmlunit-core-js</artifactId>
+            <exclusions>
+                <!-- See: http://old.nabble.com/-HtmlUnit%2D-Not-depending-on-xercesImpl.jar-td25053687.html -->
+                <exclusion>
+                    <groupId>xerces</groupId>
+                    <artifactId>xerces</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>xerces</groupId>
+            <artifactId>xercesImpl</artifactId>
+            <version>2.9.1</version>
+            <scope>system</scope>
+            <systemPath>${GWT_TOOLS}/lib/xerces/xerces-2_9_1/xercesImpl-NoMetaInf.jar</systemPath>
+        </dependency>
+        <!--
+        <dependency>
+            <groupId>xalan</groupId>
+            <artifactId>serializer</artifactId>
+            <version>2.9.1</version>
+            <scope>system</scope>
+            <systemPath>${GWT_TOOLS}/lib/xerces/xerces-2_9_1/serializer.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>xml-apis</groupId>
+            <artifactId>xml-apis</artifactId>
+            <version>2.9.1</version>
+            <scope>system</scope>
+            <systemPath>${GWT_TOOLS}/lib/xerces/xerces-2_9_1/xml-apis.jar</systemPath>
+        </dependency>
+        -->
 
         <dependency>
             <groupId>junit</groupId>
