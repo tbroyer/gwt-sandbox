@@ -101,5 +101,9 @@
         <module>gwt-safehtml-server</module>
         <module>gwt-i18n-server</module>
         <module>gwt-i18n-shared</module>
+        <module>gwt-rpc-client</module>
+        <module>gwt-rpc-server</module>
+        <module>gwt-rpc-shared</module>
+        <module>gwt-rpc-api</module>
     </modules>
 </project>
