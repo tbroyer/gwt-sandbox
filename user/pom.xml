@@ -10,12 +10,12 @@
 	<version>2.6.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>com.google.gwt.util</groupId>
-    <artifactId>gwt-util-parent</artifactId>
+    <groupId>com.google.gwt.user</groupId>
+    <artifactId>gwt-user-parent</artifactId>
     <packaging>pom</packaging>
 
     <modules>
-        <module>gwt-shared</module>
-        <module>gwt-tools-api</module>
+        <module>gwt-user-core</module>
+        <module>gwt-lang</module>
     </modules>
 </project>

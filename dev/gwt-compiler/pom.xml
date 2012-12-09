@@ -12,7 +12,39 @@
 
     <artifactId>gwt-compiler</artifactId>
 
+    <build>
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+            </testResource>
+            <testResource>
+                <directory>src/test/java</directory>
+                <includes>
+                    <include>**/testdata/**</include>
+                    <include>**/mediatortest/**</include>
+                    <include>**/test/**</include>
+                </includes>
+            </testResource>
+        </testResources>
+
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <configuration>
+                        <useManifestOnlyJar>false</useManifestOnlyJar>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
     <dependencies>
+        <dependency>
+            <groupId>com.google.gwt.util</groupId>
+            <artifactId>gwt-shared</artifactId>
+            <version>${project.version}</version>
+        </dependency>
         <dependency>
             <groupId>com.google.gwt.util</groupId>
             <artifactId>gwt-tools-api</artifactId>
@@ -29,8 +61,55 @@
             <version>${project.version}</version>
         </dependency>
         <dependency>
+            <groupId>com.google.gwt.user</groupId>
+            <artifactId>gwt-lang</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.gwt.user</groupId>
+            <artifactId>gwt-user-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.javascript</groupId>
+            <artifactId>closure-compiler</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jdt</groupId>
+            <artifactId>core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jdt</groupId>
+            <artifactId>jdtCompilerAdapter</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ant</groupId>
+            <artifactId>ant</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>xerces</groupId>
+            <artifactId>xercesImpl</artifactId>
+            <version>2.9.1</version>
+            <scope>system</scope>
+            <systemPath>${GWT_TOOLS}/lib/xerces/xerces-2_9_1/xercesImpl-NoMetaInf.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>xerces</groupId>
+            <artifactId>serializer</artifactId>
+            <version>2.9.1</version>
+            <scope>system</scope>
+            <systemPath>${GWT_TOOLS}/lib/xerces/xerces-2_9_1/serializer.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>xml-apis</groupId>
+            <artifactId>xml-apis</artifactId>
+            <version>2.9.1</version>
+            <scope>system</scope>
+            <systemPath>${GWT_TOOLS}/lib/xerces/xerces-2_9_1/xml-apis.jar</systemPath>
         </dependency>
 
         <dependency>
