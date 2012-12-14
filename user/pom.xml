@@ -106,6 +106,8 @@
         <module>gwt-rpc-shared</module>
         <module>gwt-rpc-api</module>
         <module>gwt-dom</module>
+        <module>gwt-safecss-server</module>
+        <module>gwt-safecss-client</module>
         <module>gwt-safehtml-client</module>
     </modules>
 </project>
