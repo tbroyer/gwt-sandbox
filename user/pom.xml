@@ -105,6 +105,10 @@
         <module>gwt-rpc-server</module>
         <module>gwt-rpc-shared</module>
         <module>gwt-rpc-api</module>
+        <module>gwt-event-shared</module>
+        <module>gwt-event-client</module>
+        <module>gwt-event-logical-shared</module>
+        <module>gwt-event-logical-client</module>
         <module>gwt-dom</module>
         <module>gwt-safecss-server</module>
         <module>gwt-safecss-client</module>
