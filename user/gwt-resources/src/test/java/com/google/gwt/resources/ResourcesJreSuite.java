@@ -15,10 +15,10 @@
  */
 package com.google.gwt.resources;
 
-import com.google.gwt.junit.tools.GWTTestSuite;
 import com.google.gwt.resources.rg.CssOutputTestCase;
 
 import junit.framework.Test;
+import junit.framework.TestSuite;
 
 /**
  * JRE tests of the ClientBundle framework.
@@ -26,7 +26,7 @@ import junit.framework.Test;
 public class ResourcesJreSuite {
   public static Test suite() {
 
-    GWTTestSuite suite = new GWTTestSuite("JRE test for com.google.gwt.resources");
+    TestSuite suite = new TestSuite("JRE test for com.google.gwt.resources");
     suite.addTestSuite(CssOutputTestCase.class);
     return suite;
   }
