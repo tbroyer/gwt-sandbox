@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.google.gwt.user</groupId>
+    <artifactId>gwt-user-parent</artifactId>
+    <version>2.6.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>gwt-junit</artifactId>
+
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+      </resource>
+      <!-- embed sources in the JAR -->
+      <resource>
+        <directory>src/main/java</directory>
+      </resource>
+      <!-- super-sources -->
+      <resource>
+        <directory>src/main/super</directory>
+        <targetPath>com/google/gwt/junit/translatable</targetPath>
+      </resource>
+    </resources>
+    <testResources>
+      <testResource>
+        <directory>src/test/resources</directory>
+      </testResource>
+      <!-- make sources available for GWTTestCases -->
+      <testResource>
+        <directory>src/test/java</directory>
+      </testResource>
+      <!-- super-sources -->
+      <testResource>
+        <directory>src/test/super</directory>
+        <targetPath>com/google/gwt/junit/translatable</targetPath>
+      </testResource>
+    </testResources>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <systemPropertyVariables>
+            <gwt.args>-ea -out ${basedir}/target/gwt-junit</gwt.args>
+          </systemPropertyVariables>
+          <forkMode>once</forkMode>
+          <useManifestOnlyJar>false</useManifestOnlyJar>
+          <includes>
+            <include>**/*Suite.class</include>
+          </includes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.google.gwt.dev</groupId>
+      <artifactId>gwt-devmode</artifactId>
+      <version>${project.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- Used via RMI, small enough that we don't need to split out an API artifact -->
+    <dependency>
+      <groupId>com.google.gwt.user</groupId>
+      <artifactId>gwt-browsermanager</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.gwt.user</groupId>
+      <artifactId>gwt-window</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.gwt.user</groupId>
+      <artifactId>gwt-timer</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.gwt.user</groupId>
+      <artifactId>gwt-http</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.gwt.user</groupId>
+      <artifactId>gwt-rpc-client</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.gwt.user</groupId>
+      <artifactId>gwt-rpc-server</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>net.sourceforge.htmlunit</groupId>
+      <artifactId>htmlunit</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.seleniumhq.selenium.client-drivers</groupId>
+      <artifactId>selenium-java-client-driver</artifactId>
+      <version>1.0.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.seleniumhq.selenium.server</groupId>
+      <artifactId>selenium-server</artifactId>
+      <version>1.0.1</version>
+    </dependency>
+  </dependencies>
+</project>

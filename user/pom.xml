@@ -105,6 +105,8 @@
         <module>gwt-rpc-server</module>
         <module>gwt-rpc-shared</module>
         <module>gwt-rpc-api</module>
+        <module>gwt-junit</module>
+        <module>gwt-browsermanager</module>
         <module>gwt-event-shared</module>
         <module>gwt-event-client</module>
         <module>gwt-event-logical-shared</module>
