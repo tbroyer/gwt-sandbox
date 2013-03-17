@@ -96,5 +96,10 @@
         <module>gwt-core-client</module>
         <module>gwt-core-server</module>
         <module>gwt-http</module>
+        <module>gwt-regexp-server</module>
+        <module>gwt-regexp-client</module>
+        <module>gwt-safehtml-server</module>
+        <module>gwt-i18n-server</module>
+        <module>gwt-i18n-shared</module>
     </modules>
 </project>

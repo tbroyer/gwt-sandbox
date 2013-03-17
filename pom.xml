@@ -106,6 +106,13 @@
                 <scope>system</scope>
                 <systemPath>${GWT_TOOLS}/lib/jscomp/sourcemap-rebased.jar</systemPath>
             </dependency>
+            <dependency>
+                <groupId>com.google.jsilver</groupId>
+                <artifactId>streamhtmlparser</artifactId>
+                <version>r10-gwt-rebased</version>
+                <scope>system</scope>
+                <systemPath>${GWT_TOOLS}/lib/streamhtmlparser/streamhtmlparser-jsilver-r10/streamhtmlparser-jsilver-r10-rebased.jar</systemPath>
+            </dependency>
 
             <!-- Test -->
             <dependency>
