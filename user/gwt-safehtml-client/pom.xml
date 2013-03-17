@@ -1,0 +1,69 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.google.gwt.user</groupId>
+    <artifactId>gwt-user-parent</artifactId>
+    <version>2.6.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>gwt-safehtml-client</artifactId>
+
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+      </resource>
+      <!-- embed sources in the JAR -->
+      <resource>
+        <directory>src/main/java</directory>
+      </resource>
+      <!-- super-sources -->
+      <resource>
+        <directory>src/main/super</directory>
+        <targetPath>com/google/gwt/safehtml/super</targetPath>
+      </resource>
+      <!-- Where java-source dependencies are unpacked -->
+      <resource>
+        <directory>${dependencySourcesDirectory}</directory>
+      </resource>
+    </resources>
+  
+    <plugins>
+      <!-- Unpack java-source dependencies -->
+      <plugin>
+        <artifactId>maven-dependency-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.google.gwt.user</groupId>
+      <artifactId>gwt-safehtml-server</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.gwt.user</groupId>
+      <artifactId>gwt-safehtml-server</artifactId>
+      <version>${project.version}</version>
+      <type>java-source</type>
+    </dependency>
+    <dependency>
+      <groupId>com.google.gwt.user</groupId>
+      <artifactId>gwt-regexp-client</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.gwt.user</groupId>
+      <artifactId>gwt-http</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.jsilver</groupId>
+      <artifactId>streamhtmlparser</artifactId>
+    </dependency>
+  </dependencies>
+</project>
