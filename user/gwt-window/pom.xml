@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <artifactId>gwt-user-parent</artifactId>
+    <groupId>com.google.gwt.user</groupId>
+    <version>2.6.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>gwt-window</artifactId>
+
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+      </resource>
+      <!-- embed sources in the JAR -->
+      <resource>
+        <directory>src/main/java</directory>
+      </resource>
+    </resources>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.google.gwt.user</groupId>
+      <artifactId>gwt-dom</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.gwt.user</groupId>
+      <artifactId>gwt-resources-core</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    </dependencies>
+</project>

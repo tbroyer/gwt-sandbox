@@ -114,5 +114,7 @@
         <module>gwt-safecss-client</module>
         <module>gwt-safehtml-client</module>
         <module>gwt-resources</module>
+        <module>gwt-window</module>
+        <module>gwt-timer</module>
     </modules>
 </project>
