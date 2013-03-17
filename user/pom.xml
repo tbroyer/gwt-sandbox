@@ -113,6 +113,7 @@
         <module>gwt-safecss-server</module>
         <module>gwt-safecss-client</module>
         <module>gwt-safehtml-client</module>
+        <module>gwt-jsonp</module>
         <module>gwt-resources</module>
         <module>gwt-window</module>
         <module>gwt-timer</module>
