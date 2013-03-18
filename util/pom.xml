@@ -17,5 +17,6 @@
     <modules>
         <module>gwt-shared</module>
         <module>gwt-tools-api</module>
+        <module>gwt-codegen</module>
     </modules>
 </project>

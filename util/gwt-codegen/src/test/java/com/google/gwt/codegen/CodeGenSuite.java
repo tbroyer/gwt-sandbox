@@ -16,9 +16,9 @@
 package com.google.gwt.codegen;
 
 import com.google.gwt.codegen.server.StringGeneratorTest;
-import com.google.gwt.junit.tools.GWTTestSuite;
 
 import junit.framework.Test;
+import junit.framework.TestSuite;
 
 /**
  * All codegen tests.
@@ -31,7 +31,7 @@ public class CodeGenSuite {
    * @return {@link GWTTestSuite} instance
    */
   public static Test suite() {
-    GWTTestSuite suite = new GWTTestSuite("All codegen tests");
+    TestSuite suite = new TestSuite("All codegen tests");
 
     // $JUnit-BEGIN$
     suite.addTestSuite(StringGeneratorTest.class);
