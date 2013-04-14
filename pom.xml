@@ -29,6 +29,7 @@
     </properties>
 
     <modules>
+        <module>maven</module>
         <module>util</module>
         <module>dev</module>
         <module>user</module>
@@ -39,6 +40,30 @@
         <pluginManagement>
             <plugins>
                 <plugin>
+                    <groupId>com.google.gwt.maven</groupId>
+                    <artifactId>gwt-maven-plugin</artifactId>
+                    <version>${project.version}</version>
+                    <!-- We can't use extensions=true as the plugin is built as part of the reactor -->
+                    <executions>
+                      <execution>
+                        <goals>
+                          <goal>enforce-encoding</goal>
+                          <goal>import-sources</goal>
+                          <goal>import-test-sources</goal>
+                          <goal>generate-module-metadata</goal>
+                          <goal>generate-module</goal>
+                          <goal>test</goal>
+                        </goals>
+                      </execution>
+                    </executions>
+                    <configuration>
+                      <excludes>
+                        <exclude>**/*JreSuite.java</exclude>
+                        <exclude>**/*SuiteNoBrowser.java</exclude>
+                      </excludes>
+                    </configuration>
+                </plugin>
+                <plugin>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.0</version>
                     <configuration>
@@ -48,10 +73,14 @@
                 </plugin>
                 <plugin>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.14</version>
+                    <version>2.14.1</version>
                     <configuration>
                         <forkCount>1C</forkCount>
                         <reuseForks>false</reuseForks>
+                        <includes>
+                          <include>**/*JreSuite.java</include>
+                          <include>**/*SuiteNoBrowser.java</include>
+                        </includes>
                     </configuration>
                 </plugin>
                 <plugin>

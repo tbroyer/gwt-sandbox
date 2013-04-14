@@ -12,20 +12,17 @@
   <artifactId>gwt-rpc-client</artifactId>
 
   <build>
-    <resources>
-      <resource>
-        <directory>src/main/resources</directory>
-      </resource>
-      <!-- embed sources in the JAR -->
-      <resource>
-        <directory>src/main/java</directory>
-      </resource>
-      <!-- super-sources -->
-      <resource>
-        <directory>src/main/super</directory>
-        <targetPath>com/google/gwt/user/translatable</targetPath>
-      </resource>
-    </resources>
+    <plugins>
+      <plugin>
+        <groupId>com.google.gwt.maven</groupId>
+        <artifactId>gwt-maven-plugin</artifactId>
+        <configuration>
+          <moduleName>com.google.gwt.user.RemoteService</moduleName>
+          <skipModule>true</skipModule>
+          <skipTests>true</skipTests>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 
   <dependencies>

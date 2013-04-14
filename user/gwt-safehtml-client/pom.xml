@@ -12,29 +12,15 @@
   <artifactId>gwt-safehtml-client</artifactId>
 
   <build>
-    <resources>
-      <resource>
-        <directory>src/main/resources</directory>
-      </resource>
-      <!-- embed sources in the JAR -->
-      <resource>
-        <directory>src/main/java</directory>
-      </resource>
-      <!-- super-sources -->
-      <resource>
-        <directory>src/main/super</directory>
-        <targetPath>com/google/gwt/safehtml/super</targetPath>
-      </resource>
-      <!-- Where java-source dependencies are unpacked -->
-      <resource>
-        <directory>${dependencySourcesDirectory}</directory>
-      </resource>
-    </resources>
-  
     <plugins>
-      <!-- Unpack java-source dependencies -->
       <plugin>
-        <artifactId>maven-dependency-plugin</artifactId>
+        <groupId>com.google.gwt.maven</groupId>
+        <artifactId>gwt-maven-plugin</artifactId>
+        <configuration>
+          <moduleName>com.google.gwt.safehtml.SafeHtml</moduleName>
+          <skipModule>true</skipModule>
+          <skipTests>true</skipTests>
+        </configuration>
       </plugin>
     </plugins>
   </build>

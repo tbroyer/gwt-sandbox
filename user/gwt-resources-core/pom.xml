@@ -12,24 +12,17 @@
   <artifactId>gwt-resources-core</artifactId>
 
   <build>
-    <resources>
-      <resource>
-        <directory>src/main/resources</directory>
-      </resource>
-      <!-- embed sources in the JAR -->
-      <resource>
-        <directory>src/main/java</directory>
-      </resource>
-    </resources>
-    <testResources>
-      <testResource>
-        <directory>src/test/resources</directory>
-      </testResource>
-      <!-- include sources for the tests -->
-      <testResource>
-        <directory>src/test/java</directory>
-      </testResource>
-    </testResources>
+    <plugins>
+      <plugin>
+        <groupId>com.google.gwt.maven</groupId>
+        <artifactId>gwt-maven-plugin</artifactId>
+        <configuration>
+          <moduleName>com.google.gwt.resources.ResourcesBase</moduleName>
+          <skipModule>true</skipModule>
+          <skipTests>true</skipTests>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 
   <dependencies>

@@ -12,15 +12,16 @@
   <artifactId>gwt-jsonp</artifactId>
 
   <build>
-    <resources>
-      <resource>
-        <directory>src/main/resources</directory>
-      </resource>
-      <!-- embed sources in the JAR -->
-      <resource>
-        <directory>src/main/java</directory>
-      </resource>
-    </resources>
+    <plugins>
+      <plugin>
+        <groupId>com.google.gwt.maven</groupId>
+        <artifactId>gwt-maven-plugin</artifactId>
+        <configuration>
+          <moduleName>com.google.gwt.jsonp.Jsonp</moduleName>
+          <skipModule>true</skipModule>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 
   <dependencies>

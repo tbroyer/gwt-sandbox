@@ -51,10 +51,12 @@
             <gwt.args>-ea -out ${basedir}/target/gwt-junit</gwt.args>
           </systemPropertyVariables>
           <forkMode>once</forkMode>
-          <useManifestOnlyJar>false</useManifestOnlyJar>
           <includes>
             <include>**/*Suite.class</include>
           </includes>
+          <!-- see http://maven.apache.org/surefire/maven-surefire-plugin/faq.html#GWT -->
+          <useSystemClassLoader>true</useSystemClassLoader>
+          <useManifestOnlyJar>false</useManifestOnlyJar>
         </configuration>
       </plugin>
     </plugins>
@@ -65,7 +67,8 @@
       <groupId>com.google.gwt.dev</groupId>
       <artifactId>gwt-devmode</artifactId>
       <version>${project.version}</version>
-      <scope>provided</scope>
+      <!-- When we have a gwt-maven-plugin with gwt:test goal, uncomment the following line -->
+      <!-- <scope>provided</scope> -->
     </dependency>
     <!-- Used via RMI, small enough that we don't need to split out an API artifact -->
     <dependency>

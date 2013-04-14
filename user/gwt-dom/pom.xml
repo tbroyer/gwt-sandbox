@@ -12,15 +12,17 @@
   <artifactId>gwt-dom</artifactId>
 
   <build>
-    <resources>
-      <resource>
-        <directory>src/main/resources</directory>
-      </resource>
-      <!-- embed sources in the JAR -->
-      <resource>
-        <directory>src/main/java</directory>
-      </resource>
-    </resources>
+    <plugins>
+      <plugin>
+        <groupId>com.google.gwt.maven</groupId>
+        <artifactId>gwt-maven-plugin</artifactId>
+        <configuration>
+          <moduleName>com.google.gwt.dom.DOM</moduleName>
+          <skipModule>true</skipModule>
+          <skipTests>true</skipTests>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 
   <dependencies>

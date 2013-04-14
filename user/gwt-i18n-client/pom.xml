@@ -11,6 +11,20 @@
 
   <artifactId>gwt-i18n-client</artifactId>
 
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.google.gwt.maven</groupId>
+        <artifactId>gwt-maven-plugin</artifactId>
+        <configuration>
+          <moduleName>com.google.gwt.i18n.I18N</moduleName>
+          <skipModule>true</skipModule>
+          <skipTests>true</skipTests>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
   <dependencies>
     <dependency>
       <groupId>com.google.gwt.user</groupId>

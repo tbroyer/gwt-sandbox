@@ -12,28 +12,14 @@
   <artifactId>event-gwt</artifactId>
 
   <build>
-    <resources>
-      <resource>
-        <directory>src/main/resources</directory>
-      </resource>
-      <!-- embed sources in the JAR -->
-      <resource>
-        <directory>src/main/java</directory>
-      </resource>
-      <!-- super-sources -->
-      <resource>
-        <directory>src/main/super</directory>
-      </resource>
-      <!-- Where java-source dependencies are unpacked -->
-      <resource>
-        <directory>${dependencySourcesDirectory}</directory>
-      </resource>
-    </resources>
-
     <plugins>
-      <!-- Unpack java-source dependencies -->
       <plugin>
-        <artifactId>maven-dependency-plugin</artifactId>
+        <groupId>com.google.gwt.maven</groupId>
+        <artifactId>gwt-maven-plugin</artifactId>
+        <configuration>
+          <moduleName>com.google.web.bindery.event.Event</moduleName>
+          <skipModule>true</skipModule>
+        </configuration>
       </plugin>
     </plugins>
   </build>

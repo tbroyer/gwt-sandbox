@@ -11,6 +11,7 @@
     </parent>
 
     <artifactId>gwt-core-client</artifactId>
+    <!-- Note: we cannot use packaging=gwt-lib, as the plugin transitively depends on us -->
 
     <build>
         <resources>
@@ -35,6 +36,19 @@
             <!-- Unpack java-source dependencies -->
             <plugin>
                 <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>generate-resources</phase>
+                        <goals>
+                           <goal>unpack-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <includeTypes>java-source</includeTypes>
+                            <includeScope>runtime</includeScope>
+                            <outputDirectory>${dependencySourcesDirectory}</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

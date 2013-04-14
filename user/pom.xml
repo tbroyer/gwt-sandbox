@@ -32,6 +32,7 @@
     <build>
         <pluginManagement>
             <plugins>
+                <!-- Used by *-shared artifacts -->
                 <plugin>
                     <artifactId>maven-source-plugin</artifactId>
                     <version>2.2.1</version>
@@ -41,22 +42,6 @@
                             <goals>
                                 <goal>jar-no-fork</goal>
                             </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-dependency-plugin</artifactId>
-                    <executions>
-                        <execution>
-                            <phase>generate-resources</phase>
-                            <goals>
-                                <goal>unpack-dependencies</goal>
-                            </goals>
-                            <configuration>
-                                <includeTypes>java-source</includeTypes>
-                                <includeScope>compile</includeScope>
-                                <outputDirectory>${dependencySourcesDirectory}</outputDirectory>
-                            </configuration>
                         </execution>
                     </executions>
                 </plugin>
