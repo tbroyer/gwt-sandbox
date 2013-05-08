@@ -50,5 +50,10 @@
         <module>autobean-shared</module>
         <module>autobean-vm</module>
         <module>autobean-gwt</module>
+        <module>requestfactory-shared</module>
+        <module>requestfactory-client</module>
+        <module>requestfactory-server</module>
+        <module>requestfactory-gwt</module>
+        <module>requestfactory-apt</module>
     </modules>
 </project>

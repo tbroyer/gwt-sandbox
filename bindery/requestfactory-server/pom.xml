@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.google.web.bindery</groupId>
+    <artifactId>gwt-bindery-parent</artifactId>
+    <version>2.6.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>requestfactory-server</artifactId>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.google.web.bindery</groupId>
+      <artifactId>requestfactory-client</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <!-- TODO: extract RPCServletUtils into its own JAR -->
+    <dependency>
+      <groupId>com.google.gwt.user</groupId>
+      <artifactId>gwt-rpc-server</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <!-- TODO: needed only for a constant declared in RpcRequestBuilder -->
+    <dependency>
+      <groupId>com.google.gwt.user</groupId>
+      <artifactId>gwt-rpc-client</artifactId>
+      <version>${project.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- FIXME: waiting for gwt-logging-server -->
+    <dependency>
+      <groupId>com.google.gwt.user</groupId>
+      <artifactId>gwt-user</artifactId>
+      <version>${project.version}</version>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+    </dependency>
+  </dependencies>
+</project>
