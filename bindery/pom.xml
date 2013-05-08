@@ -47,5 +47,8 @@
     <modules>
         <module>event</module>
         <module>event-gwt</module>
+        <module>autobean-shared</module>
+        <module>autobean-vm</module>
+        <module>autobean-gwt</module>
     </modules>
 </project>
