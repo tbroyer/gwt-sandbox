@@ -15,8 +15,6 @@
  */
 package com.google.gwt.core.shared;
 
-import com.google.gwt.core.client.JavaScriptException;
-
 /**
  * A serializable copy of a {@link Throwable}, including its causes and stack trace. It overrides
  * {@code #toString} to mimic original {@link Throwable#toString()} so that {@link #printStackTrace}
@@ -147,9 +145,10 @@ public final class SerializableThrowable extends Throwable {
     } catch (NullPointerException e) {
       resolvedName = "java.lang.NullPointerException";
       resolvedType = NullPointerException.class;
-    } catch (JavaScriptException e) {
-      resolvedName = "com.google.gwt.core.client.JavaScriptException";
-      resolvedType = JavaScriptException.class;
+// FIXME
+//    } catch (JavaScriptException e) {
+//      resolvedName = "com.google.gwt.core.client.JavaScriptException";
+//      resolvedType = JavaScriptException.class;
     } catch (RuntimeException e) {
       resolvedName = "java.lang.RuntimeException";
       resolvedType = RuntimeException.class;
