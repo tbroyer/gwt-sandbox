@@ -107,5 +107,7 @@
         <module>gwt-resources</module>
         <module>gwt-window</module>
         <module>gwt-timer</module>
+        <!-- FIXME: temporary contains all non-modularized code -->
+        <module>gwt-user</module>
     </modules>
 </project>
