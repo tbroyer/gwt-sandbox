@@ -27,7 +27,7 @@
   <dependencies>
     <dependency>
       <groupId>com.google.gwt.user</groupId>
-      <artifactId>gwt-user-core</artifactId>
+      <artifactId>gwt-core-client</artifactId>
       <version>${project.version}</version>
     </dependency>
   </dependencies>

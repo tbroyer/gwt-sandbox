@@ -75,12 +75,7 @@
         </dependency>
         <dependency>
             <groupId>com.google.gwt.user</groupId>
-            <artifactId>gwt-lang</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.gwt.user</groupId>
-            <artifactId>gwt-user-core</artifactId>
+            <artifactId>gwt-core-client</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
