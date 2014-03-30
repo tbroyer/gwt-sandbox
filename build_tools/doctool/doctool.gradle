@@ -1,0 +1,7 @@
+def toolsJar = file("${System.getProperty('java.home')}/../lib/tools.jar")
+if (toolsJar.exists() ){
+  dependencies {
+    compile files(toolsJar)
+  }
+}
+

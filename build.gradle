@@ -1,0 +1,93 @@
+ext {
+  GWT_TOOLS = System.env.containsKey('GWT_TOOLS') ? System.env.GWT_TOOLS : "$rootDir/../tools"
+}
+
+subprojects {
+  // TODO: checkstyle
+  apply plugin: 'java'
+
+  repositories {
+    mavenCentral()
+  }
+
+  sourceCompatibility = 1.6
+
+  tasks.withType(Compile) { task ->
+    task.options.with {
+      encoding = 'UTF-8'
+      warnings = false
+
+      fork memoryMaximumSize: '1024m'
+      debug debugLevel: 'lines,vars,source'
+
+      compilerArgs += [ '-sourcepath', task.source.asPath ]
+    }
+  }
+
+  test {
+    include '**/*Suite.class'
+    scanForTestClasses = false
+    maxHeapSize = '1024m'
+    jvmArgs '-Xss4m'
+    testLogging.showStandardStreams = true
+    systemProperty 'com.google.gwt.junit.reportPath', 'reports'
+    systemProperty 'java.awt.headless', 'true'
+  }
+
+  sourceSets {
+    main {
+      java {
+        srcDirs = [ 'src' ]
+        exclude '**/super/**'
+      }
+      resources {
+        srcDirs = [ 'src', 'super' ]
+        //filter.excludes = [] // reset excludes to include java sources
+      }
+    }
+    test {
+      java {
+        srcDirs = [ 'test' ]
+      }
+      resources {
+        srcDirs = [ 'test', 'test-super' ]
+        //filter.excludes = [] // reset excludes to include java sources
+      }
+    }
+  }
+
+  dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+
+    testRuntime localJar('selenium/selenium-java-client-driver.jar')
+    testRuntime localJar('w3c/sac/sac-1.3.jar')
+    testRuntime localJar('w3c/flute/flute-1.3-gg2.jar') 
+  }
+
+  afterEvaluate {
+    configure (it) {
+      dependencies {
+        testRuntime files(sourceSets.main.resources.srcDirs)
+        testRuntime files(sourceSets.test.resources.srcDirs)
+      }
+
+      jar {
+        from sourceSets.main.allJava 
+      }
+    }
+  }
+}
+
+def localJar(path) {
+    return files("$GWT_TOOLS/lib/" + path)
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.12'
+}
+
+allprojects {
+  apply plugin: 'idea'
+  apply plugin: 'eclipse'
+}
+

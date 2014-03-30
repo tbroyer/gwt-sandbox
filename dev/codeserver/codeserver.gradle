@@ -1,0 +1,12 @@
+sourceSets {
+  main {
+    java {
+      srcDirs = [ 'java' ]
+    }
+  }
+}
+
+dependencies {
+  compile project(':dev')
+}
+

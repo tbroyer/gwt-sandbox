@@ -1,0 +1,8 @@
+apply plugin: 'war'
+
+webAppDirName = 'war'
+
+dependencies {
+    compile project(':user')
+}
+

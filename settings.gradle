@@ -1,0 +1,18 @@
+rootProject.name = 'gwt'
+
+include 'build_tools/doctool'
+include 'dev/core'
+include 'dev/codeserver'
+include 'user'
+include 'samples/hello'
+include 'samples/mail'
+
+rootProject.children.each { project ->
+  if (project.name == 'dev/core') {
+    project.name = 'dev'
+  } else {
+    project.name = project.projectDir.name
+  }
+  project.buildFileName = project.name + '.gradle'
+}
+
