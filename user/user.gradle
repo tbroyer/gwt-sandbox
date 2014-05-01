@@ -17,34 +17,27 @@ dependencies {
     compile localJar('junit/junit-4.8.2.jar')
     compile localJar('selenium/selenium-java-client-driver.jar')
     compile localJar('w3c/sac/sac-1.3.jar')
-    compile localJar('w3c/flute/flute-1.3-gg2.jar')
-    compile localJar('json/android-sdk-19.1/json-android.jar')
-    compile localJar('javax/validation/validation-api-1.0.0.GA.jar')
-    compile localJar('javax/validation/validation-api-1.0.0.GA-sources.jar')
-    compile localJar('hibernate/validator/hibernate-validator-4.1.0.Final.jar')
-    compile localJar('hibernate/validator/hibernate-validator-4.1.0.Final-sources.jar')
-    compile localJar('streamhtmlparser/streamhtmlparser-jsilver-r10/streamhtmlparser-jsilver-r10-1.5-rebased.jar')
+    compile 'com.vaadin.external.flute:flute:1.3.0.gg2'
+    compile 'com.vaadin.external.google:android-json:0.0.20131108.vaadin1'
+    compile 'javax.validation:validation-api:1.0.0.GA'
+    compile 'javax.validation:validation-api:1.0.0.GA:sources'
+    compile 'org.hibernate:hibernate-validator:4.1.0.Final'
+    compile 'org.hibernate:hibernate-validator:4.1.0.Final:sources'
+    compile 'com.vaadin.external.streamhtmlparser:streamhtmlparser-jsilver:0.0.10.vaadin1'
     compile project(':dev')
 
     testCompile project(':dev').sourceSets.test.runtimeClasspath
-    testRuntime localJar('apache/log4j/log4j-1.2.16.jar')
-    testRuntime localJar('cglib/cglib-2.2.jar')
-    testRuntime localJar('objenesis/objenesis-1.2.jar')
-    testCompile localJar('easymock/easymock-3.0.jar')
-    testRuntime localJar('objectweb/asm-3.1.jar')
-    testRuntime localJar('slf4j/slf4j-api/slf4j-api-1.6.1.jar')
-    testRuntime localJar('slf4j/slf4j-log4j12/slf4j-log4j12-1.6.1.jar')
+    testCompile 'org.easymock:easymock:3.0'
     // TCK jars
-    testRuntime localJar('hibernate/validator/tck/jsr303-tck-1.0.3.GA-sources.jar')
-    testCompile localJar('hibernate/validator/tck/jsr303-tck-1.0.3.GA.jar')
-    testRuntime localJar('jboss/test-audit/jboss-test-audit-api-1.0.0-sources.jar')
-    testRuntime localJar('jboss/test-audit/jboss-test-audit-api-1.0.0.jar')
-    testRuntime localJar('jboss/test-harness/jboss-test-harness-1.0.0-sources.jar')
-    testCompile localJar('jboss/test-harness/jboss-test-harness-1.0.0.jar')
-    testRuntime localJar('jboss/test-harness/jboss-test-harness-api-1.0.0-sources.jar')
-    testRuntime localJar('jboss/test-harness/jboss-test-harness-api-1.0.0.jar')
-    testRuntime localJar('testng/testng-5.14.1-sources.jar')
-    testRuntime localJar('testng/testng-5.14.1-nojunit.jar')
+    testCompile('org.hibernate.jsr303.tck:jsr303-tck:1.0.6.GA') {
+      exclude group: 'org.testng', module: 'testng'
+    }
+    testRuntime 'org.hibernate.jsr303.tck:jsr303-tck:1.0.6.GA:sources@jar'
+    testRuntime 'org.jboss.test-audit:jboss-test-audit-api:1.0.0:sources@jar'
+    testRuntime 'org.jboss.test-harness:jboss-test-harness:1.0.0:sources@jar'
+    testRuntime 'org.jboss.test-harness:jboss-test-harness-api:1.0.0:sources@jar'
+    testRuntime 'org.testng:testng:5.14.1'
+    testRuntime 'org.testng:testng:5.14.1:sources@jar'
 }
 
 compileTestJava {
